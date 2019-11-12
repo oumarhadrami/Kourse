@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "865735143744",
+    "firebase_url": "https://kourse-79fdc.firebaseio.com",
+    "project_id": "kourse-79fdc",
+    "storage_bucket": "kourse-79fdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865735143744:android:be9b8640b9d820b0148aa5",
+        "android_client_info": {
+          "package_name": "com.kourseco.kourse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865735143744-mhb08qshk12jln9puh5bas3gpbl1ho3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kourseco.kourse",
+            "certificate_hash": "7b41ca511eed6d7b1437f7926b77e230b38a8888"
+          }
+        },
+        {
+          "client_id": "865735143744-jd7dakkvfbl8aecfsg33rttjb7pjci68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8LHDnk9zZD2ROazivnG7_nPi59-REfuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865735143744-jd7dakkvfbl8aecfsg33rttjb7pjci68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
