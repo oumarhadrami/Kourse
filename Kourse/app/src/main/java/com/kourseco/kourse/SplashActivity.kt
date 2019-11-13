@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.kourseco.kourse.introduction_screens.MainActivity
 import com.kourseco.kourse.databinding.ActivitySplashBinding
 import kotlin.concurrent.thread
 

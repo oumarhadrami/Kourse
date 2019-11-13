@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".introduction_screens.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/TransparentStatus">
         </activity>
