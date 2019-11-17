@@ -36,7 +36,14 @@ class IntroFragment : Fragment() {
 
         // Naviagte to LogIn page
         binding.loginButton.setOnClickListener {
+            it.findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToLogInFragment())
         }
+
+        // Navigate to SignUp Page
+        binding.signupButton.setOnClickListener {
+            it.findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToSignUpFragment())
+        }
+
 
 
         return binding.root
@@ -44,8 +51,8 @@ class IntroFragment : Fragment() {
 
     private fun makeLoginOrange() {
         val text = "Have an account? Login"
-        val ss : SpannableString = SpannableString(text)
-        val orangeLogin : ForegroundColorSpan = ForegroundColorSpan(Color.parseColor("#fc8019"))
+        val ss = SpannableString(text)
+        val orangeLogin = ForegroundColorSpan(Color.parseColor("#fc8019"))
         ss.setSpan(orangeLogin, 17,22, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.loginButton.text = ss
 

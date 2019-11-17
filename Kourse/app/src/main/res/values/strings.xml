@@ -7,4 +7,12 @@
     <string name="ready_to_order_from_top_supermarkets">Ready to order from top supermarkets?</string>
     <string name="set_delivery_location">SET DELIVERY LOCATION</string>
     <string name="have_an_account_login">Have an account? Login</string>
+    <string name="title_activity_account">AccountActivity</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">LogIn</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="name">Name</string>
+    <string name="create_an_account">Create an account</string>
 </resources>

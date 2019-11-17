@@ -9,7 +9,7 @@
         tools:context=".account_screens.LogInFragment">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/close_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
@@ -23,12 +23,12 @@
             app:layout_constraintVertical_bias="00" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/go_to_signup"
             style="@style/intro_secondary_textview_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textAllCaps="true"
             android:textColor="#fc8019"
             android:textSize="22sp"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/intro_main_text_style"
-            android:text="Log in"
+            android:text="@string/log_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,22 +67,22 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="16dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:ems="10"
                 android:inputType="phone"
-                android:hint="Phone number"
+                android:hint="@string/phone_number"
                 android:paddingEnd="16dp"
                 android:paddingBottom="16dp" >
 
             </EditText>
             <TextView
-                android:id="@+id/text_view"
+                android:id="@+id/country_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/phone_number_login"
                 android:layout_alignBottom="@+id/phone_number_login"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:text="123123" />
         </RelativeLayout>
 
@@ -95,7 +95,7 @@
             android:drawableStart="@drawable/ic_lock_outline_black_32dp"
             android:drawablePadding="20dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:paddingEnd="16dp"
             android:paddingBottom="16dp"
