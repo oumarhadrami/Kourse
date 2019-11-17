@@ -1,4 +1,4 @@
-package com.kourseco.kourse.introduction_screens
+package com.kourseco.kourse.introduction_screen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

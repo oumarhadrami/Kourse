@@ -1,4 +1,4 @@
-package com.kourseco.kourse.introduction_screens
+package com.kourseco.kourse.account_screens
 
 
 import android.os.Bundle
@@ -12,14 +12,14 @@ import com.kourseco.kourse.R
 /**
  * A simple [Fragment] subclass.
  */
-class SignUpFragment : Fragment() {
+class LogInFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        return inflater.inflate(R.layout.fragment_log_in, container, false)
     }
 
 

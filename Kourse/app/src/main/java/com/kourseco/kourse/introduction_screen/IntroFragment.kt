@@ -1,4 +1,4 @@
-package com.kourseco.kourse.introduction_screens
+package com.kourseco.kourse.introduction_screen
 
 
 import android.graphics.Color
@@ -36,7 +36,6 @@ class IntroFragment : Fragment() {
 
         // Naviagte to LogIn page
         binding.loginButton.setOnClickListener {
-            it.findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToLogInFragment())
         }
 
 

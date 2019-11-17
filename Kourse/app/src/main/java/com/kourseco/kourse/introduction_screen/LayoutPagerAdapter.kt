@@ -1,4 +1,4 @@
-package com.kourseco.kourse.introduction_screens
+package com.kourseco.kourse.introduction_screen
 
 import android.view.LayoutInflater
 import android.view.View

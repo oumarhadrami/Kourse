@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".introduction_screens.LogInFragment">
+        tools:context=".account_screens.LogInFragment">
 
         <ImageButton
             android:id="@+id/imageButton"
