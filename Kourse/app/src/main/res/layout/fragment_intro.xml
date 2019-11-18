@@ -47,32 +47,32 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:text="@string/ready_to_order_from_top_supermarkets"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.5"
+            android:text="@string/ready_to_order_from_top_supermarkets" />
 
         <Button
             android:id="@+id/signup_button"
+            style="@style/main_button_style"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:text="@string/create_an_account"
             android:layout_weight="0.8"
-            style="@style/main_button_style" />
+            android:text="@string/create_an_account" />
 
         <Button
             android:id="@+id/login_button"
-            android:gravity="center"
             style="@style/intro_secondary_textview_style"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
             android:layout_height="0dp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
+            android:layout_weight="0.8"
             android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:text="@string/have_an_account_login"
-            android:textAllCaps="false"
-           android:layout_weight="0.8" />
+           android:textAllCaps="false" />
 
     </LinearLayout>
 </layout>

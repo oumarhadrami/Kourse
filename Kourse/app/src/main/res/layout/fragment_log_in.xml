@@ -12,33 +12,33 @@
             android:id="@+id/close_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="3dp"
             android:background="?android:attr/selectableItemBackground"
-            app:srcCompat="@drawable/ic_close_black_32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginStart="16dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="00" />
+            app:layout_constraintVertical_bias="00"
+            app:srcCompat="@drawable/ic_close_black_32dp" />
 
         <TextView
             android:id="@+id/go_to_signup"
             style="@style/intro_secondary_textview_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="36dp"
             android:layout_marginStart="36dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/electrolize"
             android:text="@string/sign_up"
             android:textAllCaps="true"
             android:textColor="#fc8019"
             android:textSize="22sp"
-            android:fontFamily="@font/electrolize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -48,9 +48,9 @@
 
         <TextView
             android:id="@+id/textView3"
+            style="@style/intro_main_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/intro_main_text_style"
             android:text="@string/log_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,19 +62,19 @@
 
             <EditText
                 android:id="@+id/phone_number_login"
+                style="@style/edittext_style"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_phone_black_32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
-                android:layout_marginTop="64dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginTop="64dp"
+                android:drawableStart="@drawable/ic_phone_black_32dp"
                 android:ems="10"
-                android:inputType="phone"
                 android:hint="@string/phone_number"
-                style="@style/edittext_style" >
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" >
 
             </EditText>
 
@@ -82,8 +82,10 @@
 
         <EditText
             android:id="@+id/password_login"
+            style="@style/edittext_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_lock_outline_black_32dp"
             android:ems="10"
             android:hint="@string/password"
@@ -91,16 +93,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/phone_number_login"
-            app:layout_constraintVertical_bias="0.0"
-            style="@style/edittext_style" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/login"
             style="@style/unclickable_main_button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="false"
             android:text="@string/log_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
