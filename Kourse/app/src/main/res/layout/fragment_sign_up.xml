@@ -31,7 +31,10 @@
             style="@style/intro_secondary_textview_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="36dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="36dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/login"
             android:textAllCaps="true"
             android:textColor="#fc8019"
@@ -109,7 +112,7 @@
 
         <Button
             android:id="@+id/signup"
-            style="@style/main_button_style"
+            style="@style/unclickable_main_button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
