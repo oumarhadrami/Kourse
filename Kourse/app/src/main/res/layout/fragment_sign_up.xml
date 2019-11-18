@@ -17,7 +17,10 @@
             android:src="@drawable/ic_close_black_32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="32dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +31,7 @@
             style="@style/intro_secondary_textview_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
+            android:layout_margin="36dp"
             android:text="@string/login"
             android:textAllCaps="true"
             android:textColor="#fc8019"
@@ -74,7 +77,7 @@
                 android:id="@+id/phone_number_signup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_account_circle_black_24dp"
+                android:drawableStart="@drawable/ic_phone_black_32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name_signup"
@@ -102,5 +105,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phone_number_signup"
             app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/signup"
+            style="@style/main_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_signup"
+            app:layout_constraintVertical_bias="0.15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
