@@ -21,10 +21,12 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_sign_up,container,false)
 
+        // Navigate to Intro
         binding.closeSignup.setOnClickListener {
             it.findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToIntroFragment())
         }
 
+        // Navigate to LogIn oage
         binding.goToLogin.setOnClickListener {
             it.findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToLogInFragment())
         }

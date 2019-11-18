@@ -52,57 +52,40 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.20" />
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/phone_number_login_container"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
 
             <EditText
-                android:id="@+id/phone_number_login"
-                android:layout_width="match_parent"
+                android:id="@+id/phone_number_login"       android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
                 android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:ems="10"
                 android:inputType="phone"
                 android:hint="@string/phone_number"
-                android:paddingEnd="16dp"
-                android:paddingBottom="16dp" >
+                style="@style/edittext_style" >
 
             </EditText>
-            <TextView
-                android:id="@+id/country_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/phone_number_login"
-                android:layout_alignBottom="@+id/phone_number_login"
-                android:layout_alignParentEnd="true"
-                android:text="123123" />
-        </RelativeLayout>
+
 
 
         <EditText
             android:id="@+id/password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:drawableStart="@drawable/ic_lock_outline_black_32dp"
-            android:drawablePadding="20dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:paddingEnd="16dp"
-            android:paddingBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number_login_container"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_login"
+            app:layout_constraintVertical_bias="0.0"
+            style="@style/edittext_style" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

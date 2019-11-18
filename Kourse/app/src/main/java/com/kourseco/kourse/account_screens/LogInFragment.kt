@@ -20,11 +20,13 @@ class LogInFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_log_in,container,false)
 
+
+        //Navigate to Intro
         binding.closeLogin.setOnClickListener {
             it.findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToIntroFragment())
         }
 
-
+        //Navigate to signUp page
         binding.goToSignup.setOnClickListener {
             it.findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToSignUpFragment())
         }
