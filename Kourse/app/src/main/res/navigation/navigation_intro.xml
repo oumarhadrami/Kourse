@@ -42,6 +42,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/introFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_verifyNumberFragment"
+            app:destination="@id/verifyNumberFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -60,5 +63,13 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/introFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_verifyNumberFragment"
+            app:destination="@id/verifyNumberFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/verifyNumberFragment"
+        android:name="com.kourseco.kourse.account_screens.VerifyNumberFragment"
+        tools:layout="@layout/fragment_verify_number"
+        android:label="VerifyNumberFragment" />
 </navigation>

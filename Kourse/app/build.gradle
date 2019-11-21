@@ -67,6 +67,11 @@ dependencies {
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.0.0'
 
 
+    //Firebase auth, firestore, storage
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.google.firebase:firebase-firestore:21.3.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
