@@ -37,7 +37,7 @@
             android:fontFamily="@font/electrolize"
             android:text="@string/sign_up"
             android:textAllCaps="true"
-            android:textColor="#fc8019"
+            android:textColor="@color/primaryColor"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,16 +80,13 @@
 
 
 
-        <EditText
-            android:id="@+id/password_login"
-            style="@style/edittext_style"
+        <TextView
+            android:id="@+id/email_login"
+            style="@style/intro_secondary_textview_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:drawableStart="@drawable/ic_lock_outline_black_32dp"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
+            android:text="@string/we_ll_send_you_an_sms_to_verify_your_number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +103,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_login"
+            app:layout_constraintTop_toBottomOf="@+id/email_login"
             app:layout_constraintVertical_bias="0.15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

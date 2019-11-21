@@ -52,7 +52,7 @@ class IntroFragment : Fragment() {
     private fun makeLoginOrange() {
         val text = "Have an account? Login"
         val ss = SpannableString(text)
-        val orangeLogin = ForegroundColorSpan(Color.parseColor("#fc8019"))
+        val orangeLogin = ForegroundColorSpan(Color.parseColor("#0083b6"))
         ss.setSpan(orangeLogin, 17,22, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.loginButton.text = ss
 

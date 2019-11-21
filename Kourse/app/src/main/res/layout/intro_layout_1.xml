@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_weight="4.5"
+        android:layout_weight="4"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/intro1light" />
 
@@ -16,6 +16,6 @@
         style="@style/intro_main_text_style"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:text="Delivered quickly to your doorstep" />
+        android:layout_weight="0.3"
+        android:text="@string/delivered_quickly_to_your_doorstep" />
 </LinearLayout>
