@@ -71,5 +71,17 @@
         android:id="@+id/verifyNumberFragment"
         android:name="com.kourseco.kourse.account_screens.VerifyNumberFragment"
         tools:layout="@layout/fragment_verify_number"
-        android:label="VerifyNumberFragment" />
+        android:label="VerifyNumberFragment" >
+        <argument
+            android:name="phone_number"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_verifyNumberFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.kourseco.kourse.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 </navigation>

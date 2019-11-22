@@ -1,6 +1,7 @@
 package com.kourseco.kourse.account_screens
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,6 +31,21 @@ class LogInFragment : Fragment() {
         binding.goToSignup.setOnClickListener {
             it.findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToSignUpFragment())
         }
+
+
+        binding.login.setOnClickListener {
+            val numberFromEditText = binding.phoneNumberLogin.text.toString().trim()
+            if(numberFromEditText.isEmpty()){
+                binding.phoneNumberLogin.error = "please enter phone number!"
+                binding.phoneNumberLogin.requestFocus()
+                return@setOnClickListener
+            }
+
+            val phoneNumber = "+222$numberFromEditText"
+            it.findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToVerifyNumberFragment(phoneNumber))
+        }
+
+
         return binding.root
     }
 

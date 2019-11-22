@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
 import com.kourseco.kourse.R
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                FirebaseAuth.getInstance().signOut()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
