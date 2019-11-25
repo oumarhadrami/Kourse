@@ -26,7 +26,7 @@
             app:srcCompat="@drawable/ic_close_black_32dp" />
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView3"
             style="@style/intro_main_text_style"
             android:layout_width="wrap_content"
@@ -40,10 +40,11 @@
 
 
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone_number_login"
                 style="@style/edittext_style"
                 android:layout_width="0dp"
+                android:singleLine="true"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -57,12 +58,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" >
 
-            </EditText>
+            </com.google.android.material.textfield.TextInputEditText>
 
 
 
-        <TextView
-            android:id="@+id/email_login"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_login"
             style="@style/intro_secondary_textview_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/phone_number_login"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/login"
             style="@style/main_button_style"
             android:background="@drawable/btn_rounded"
@@ -85,7 +86,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_login"
+            app:layout_constraintTop_toBottomOf="@+id/text_login"
             app:layout_constraintVertical_bias="0.15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

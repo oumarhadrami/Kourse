@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"/>
         </com.google.android.material.tabs.TabLayout>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
             style="@style/intro_secondary_textview_style"
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
             android:layout_weight="0.5"
             android:text="@string/ready_to_order_from_top_supermarkets" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/login_button"
             style="@style/main_button_style"
             android:layout_width="wrap_content"
