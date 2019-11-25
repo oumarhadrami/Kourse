@@ -17,13 +17,6 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_introFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
@@ -35,38 +28,15 @@
             app:destination="@id/introFragment"
             app:popUpTo="@+id/introFragment" />
         <action
-            android:id="@+id/action_logInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/introFragment" />
-        <action
             android:id="@+id/action_logInFragment_to_verifyNumberFragment"
-            app:destination="@id/verifyNumberFragment" />
+            app:destination="@id/verifyNumberFragment"
+            app:popUpTo="@+id/introFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.kourseco.kourse.account_screens.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
-        <action
-            android:id="@+id/action_signUpFragment_to_introFragment"
-            app:destination="@id/introFragment"
-            app:popUpTo="@+id/introFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_logInFragment"
-            app:destination="@id/logInFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/introFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_verifyNumberFragment"
-            app:destination="@id/verifyNumberFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/verifyNumberFragment"
         android:name="com.kourseco.kourse.account_screens.VerifyNumberFragment"
@@ -77,11 +47,17 @@
             app:argType="string" />
         <action
             android:id="@+id/action_verifyNumberFragment_to_homeActivity"
-            app:destination="@id/homeActivity" />
+            app:destination="@id/homeActivity"
+            app:popUpToInclusive="false" />
     </fragment>
     <activity
         android:id="@+id/homeActivity"
         android:name="com.kourseco.kourse.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
+    <activity
+        android:id="@+id/splashActivity"
+        tools:layout="@layout/activity_splash"
+        android:name="com.kourseco.kourse.SplashActivity"
+        android:label="SplashActivity" />
 </navigation>

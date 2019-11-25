@@ -32,31 +32,28 @@ class IntroFragment : Fragment() {
 
 
         //Make the Login part of the text orange
-        makeLoginOrange()
+        //makeLoginOrange()
 
         // Naviagte to LogIn page
         binding.loginButton.setOnClickListener {
             it.findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToLogInFragment())
         }
 
-        // Navigate to SignUp Page
-        binding.signupButton.setOnClickListener {
-            it.findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToSignUpFragment())
-        }
+
 
 
 
         return binding.root
     }
 
-    private fun makeLoginOrange() {
+    /*private fun makeLoginOrange() {
         val text = "Have an account? Login"
         val ss = SpannableString(text)
         val orangeLogin = ForegroundColorSpan(Color.parseColor("#0083b6"))
         ss.setSpan(orangeLogin, 17,22, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.loginButton.text = ss
 
-    }
+    }*/
 
 
 }

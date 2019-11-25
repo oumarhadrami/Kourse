@@ -10,13 +10,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#020419"
         tools:context=".SplashActivity">
 
-        <ImageView
+       <!-- <ImageView
             android:id="@+id/imageView"
             android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/splash_sample" />
+            -->
+
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

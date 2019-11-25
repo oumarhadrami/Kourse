@@ -21,6 +21,7 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Initialize firebaseAuth
+        auth = FirebaseAuth.getInstance()
 
         fab.setOnClickListener { view ->
             auth.signOut()
