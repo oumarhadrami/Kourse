@@ -3,7 +3,10 @@ package com.kourseco.kourse.account_screens
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,12 +38,30 @@ class LogInFragment : Fragment() {
         }
 
 
+//        //Make button clickable once 8 number have been registered
+//        binding.phoneNumberLogin.addTextChangedListener(object: TextWatcher {
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//            }
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//            }
+//            override fun afterTextChanged(s: Editable?){
+//                if(s.toString().length == 8) {
+//                    binding.login.setBackgroundColor(Color.parseColor("#0083b6"))
+//                    binding.login.setTextColor(Color.parseColor("#ffffff"))
+//                }
+//                else {
+//                    binding.login.setBackgroundColor(Color.parseColor("#FF7C7979"))
+//                    binding.login.setTextColor(Color.parseColor("#000000"))
+//                }
+//
+//            }
+//        })
 
-
+        //Navigate to VerifyPhoneNumber fragment with phone number as argument
         binding.login.setOnClickListener {
             val numberFromEditText = binding.phoneNumberLogin.text.toString().trim()
-            if(numberFromEditText.isEmpty()){
-                binding.phoneNumberLogin.error = "please enter phone number!"
+            if(numberFromEditText.isEmpty() || numberFromEditText.length < 8){
+                binding.phoneNumberLogin.error = "please enter the 8-digit phone number!"
                 binding.phoneNumberLogin.requestFocus()
                 return@setOnClickListener
             }
