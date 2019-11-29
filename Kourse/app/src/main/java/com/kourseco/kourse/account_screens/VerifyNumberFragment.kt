@@ -1,12 +1,16 @@
 package com.kourseco.kourse.account_screens
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
@@ -17,7 +21,6 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.kourseco.kourse.HomeActivity
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentVerifyNumberBinding
-import kotlinx.android.synthetic.main.fragment_verify_number.*
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -27,6 +30,7 @@ class VerifyNumberFragment : Fragment() {
 
     private lateinit var binding: FragmentVerifyNumberBinding
     private lateinit var auth : FirebaseAuth
+    private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     lateinit var callbacks : PhoneAuthProvider.OnVerificationStateChangedCallbacks
     var verificationId = ""
 
@@ -34,6 +38,12 @@ class VerifyNumberFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_verify_number, container, false)
+
+        //move layout up keyboard
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+
+        //make resend orange
+        makeResendOrange()
 
         //Initialize firebase Auth
         auth = FirebaseAuth.getInstance()
@@ -53,12 +63,28 @@ class VerifyNumberFragment : Fragment() {
             authenticateManually()
         }
 
+        //resend code
+        binding.resend.isEnabled = false
+        binding.resend.setOnClickListener {
+            Snackbar.make(it, "verification is being sent. check your sms inbox", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            resendVerificationCode(phoneNumber)
+        }
+
 
 
 
 
         return binding.root
     }
+
+    private fun makeResendOrange() {
+        val text = "Did not receive the code? Resend OTP"
+        val ss = SpannableString(text)
+        val orangeResend = ForegroundColorSpan(resources.getColor(R.color.secondaryColor))
+        ss.setSpan(orangeResend, 26,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.resend.text = ss
+    }
+
 
     private fun authenticateManually() {
 
@@ -72,6 +98,26 @@ class VerifyNumberFragment : Fragment() {
             signIn(credential)
 
     }
+
+
+    private fun resendVerificationCode(phoneNumber: String) {
+        verificationCallbacks()
+
+        activity?.let {
+            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,
+                60,
+                TimeUnit.SECONDS,
+                it,
+                callbacks,
+                resendToken
+            )
+        }
+
+    }
+
+
+
 
     private fun verifyPhoneNumber(phoneNumber: String) {
 
@@ -94,6 +140,7 @@ class VerifyNumberFragment : Fragment() {
 
                 Toast.makeText(activity, "success", Toast.LENGTH_LONG).show()
                 binding.otpView.setText(p0.smsCode)
+                binding.resend.isEnabled = false
                 signIn(p0)
             }
 
@@ -106,6 +153,8 @@ class VerifyNumberFragment : Fragment() {
                 if (p0 != null){
                     //binding.otpView.setText(p0)
                     verificationId = p0
+                    resendToken = p1
+                    binding.resend.isEnabled = true
                 }
 
                 binding.progressBar.visibility = View.GONE
@@ -117,12 +166,17 @@ class VerifyNumberFragment : Fragment() {
 
     private fun signIn(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful)
+            if (it.isSuccessful) {
+                binding.resend.isEnabled = false
+                binding.progressBar.visibility = View.VISIBLE
                 startActivity(Intent(activity, HomeActivity::class.java))
+            }
             else
                 Toast.makeText(activity, "Phone number not verified!!",Toast.LENGTH_LONG).show()
             }
     }
+
+
 
 }
 

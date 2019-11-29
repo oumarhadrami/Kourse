@@ -22,7 +22,8 @@
     <string name="with_a_wide_variety_of_categories">with a wide variety of categories</string>
     <string name="verification_code">Verification Code</string>
     <string name="please_enter_the_verification_code_sent_to">Please enter the verification code sent to:</string>
-    <string name="resend">RESEND</string>
+    <string name="resend">Resend OTP</string>
     <string name="validate">Validate</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="sign_in">Sign In</string>
 </resources>

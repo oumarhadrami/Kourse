@@ -33,11 +33,6 @@
             app:popUpTo="@+id/introFragment" />
     </fragment>
     <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.kourseco.kourse.account_screens.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
-    <fragment
         android:id="@+id/verifyNumberFragment"
         android:name="com.kourseco.kourse.account_screens.VerifyNumberFragment"
         tools:layout="@layout/fragment_verify_number"
@@ -55,9 +50,4 @@
         android:name="com.kourseco.kourse.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
-    <activity
-        android:id="@+id/splashActivity"
-        tools:layout="@layout/activity_splash"
-        android:name="com.kourseco.kourse.SplashActivity"
-        android:label="SplashActivity" />
 </navigation>
