@@ -18,7 +18,7 @@
     <string name="email">Email</string>
     <string name="we_ll_send_you_an_sms_to_verify_your_number">We\'ll send you an sms to verify your number</string>
     <string name="delivered_quickly_to_your_doorstep">Delivered quickly to your doorstep</string>
-    <string name="order_from_a_variey_of_supermarkets">Order from a variey of supermarkets</string>
+    <string name="order_from_a_variety_of_supermarkets">Order from a variety of supermarkets</string>
     <string name="with_a_wide_variety_of_categories">with a wide variety of categories</string>
     <string name="verification_code">Verification Code</string>
     <string name="please_enter_the_verification_code_sent_to">Please enter the verification code sent to:</string>
@@ -30,4 +30,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="did_not_receive_the_code_resend_otp">Did not receive the code? Resend OTP</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
 </resources>

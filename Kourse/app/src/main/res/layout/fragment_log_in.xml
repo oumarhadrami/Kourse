@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="00"
-            app:srcCompat="@drawable/ic_close_black_32dp" />
+            app:srcCompat="@drawable/ic_close_grey_32dp" />
 
 
         <com.google.android.material.textview.MaterialTextView
