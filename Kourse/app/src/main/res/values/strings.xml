@@ -26,4 +26,8 @@
     <string name="validate">Validate</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="sign_in">Sign In</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="did_not_receive_the_code_resend_otp">Did not receive the code? Resend OTP</string>
 </resources>

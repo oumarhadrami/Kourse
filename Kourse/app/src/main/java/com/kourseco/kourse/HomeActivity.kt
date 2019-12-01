@@ -1,35 +1,29 @@
 package com.kourseco.kourse
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.kourseco.kourse.introduction_screen.MainActivity
-
-import kotlinx.android.synthetic.main.activity_home.*
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 
 class HomeActivity : AppCompatActivity() {
-
-    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        setSupportActionBar(toolbar)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        // Initialize firebaseAuth
-        auth = FirebaseAuth.getInstance()
-
-        fab.setOnClickListener { view ->
-            auth.signOut()
-            startActivity(Intent(applicationContext,MainActivity::class.java))
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        val navController = findNavController(R.id.nav_host_fragment)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
-
-
 }

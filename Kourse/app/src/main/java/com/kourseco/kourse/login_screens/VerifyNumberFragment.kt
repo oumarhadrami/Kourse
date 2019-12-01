@@ -1,7 +1,6 @@
-package com.kourseco.kourse.account_screens
+package com.kourseco.kourse.login_screens
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned

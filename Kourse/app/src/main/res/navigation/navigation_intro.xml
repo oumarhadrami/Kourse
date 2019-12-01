@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.kourseco.kourse.account_screens.LogInFragment"
+        android:name="com.kourseco.kourse.login_screens.LogInFragment"
         tools:layout="@layout/fragment_log_in"
         android:label="LogInFragment" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/verifyNumberFragment"
-        android:name="com.kourseco.kourse.account_screens.VerifyNumberFragment"
+        android:name="com.kourseco.kourse.login_screens.VerifyNumberFragment"
         tools:layout="@layout/fragment_verify_number"
         android:label="VerifyNumberFragment" >
         <argument
