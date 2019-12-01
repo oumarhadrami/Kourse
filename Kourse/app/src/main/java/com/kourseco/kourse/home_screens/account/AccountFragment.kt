@@ -1,6 +1,7 @@
 package com.kourseco.kourse.home_screens.account
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,13 +10,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.firebase.auth.FirebaseAuth
 
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentAccountBinding
-import com.kourseco.kourse.databinding.FragmentCartBinding
-import com.kourseco.kourse.home_screens.cart.CartViewModel
+import com.kourseco.kourse.introduction_screen.MainActivity
 
 class AccountFragment : Fragment() {
+
+    private lateinit var auth : FirebaseAuth
 
     private lateinit var accountViewModel: AccountViewModel
     private lateinit var binding : FragmentAccountBinding
@@ -23,10 +26,18 @@ class AccountFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_account,container,false)
         accountViewModel = ViewModelProviders.of(this).get(AccountViewModel::class.java)
+        auth = FirebaseAuth.getInstance()
+
+        binding.logout.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(activity, MainActivity::class.java))
+        }
 
         accountViewModel.text.observe(this, Observer {
             binding.textAccount.text = it
         })
+
+        // Log out with firebase
         return binding.root
     }
 
