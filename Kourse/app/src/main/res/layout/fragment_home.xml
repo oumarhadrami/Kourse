@@ -5,245 +5,230 @@
     <data>
 
     </data>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <GridLayout
-            android:id="@+id/gridLayout"
+
+        <TableRow
+            android:id="@+id/hr"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#A7A2A2"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/what_would_you_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:columnCount="2"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:rowCount="2"
+            android:gravity="start"
+            android:id="@+id/what_would_you_like"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+            android:fontFamily="@font/electrolize"
+            android:textColor="@android:color/black"
+            android:text="@string/what_would_you_like_today"
+            android:layout_margin="12dp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintStart_toStartOf="parent">
 
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="8dp"
+                android:columnCount="3"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:useDefaultMargins="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_groceries" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/supermakets" />
+                        android:text="@string/supermakets"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
-
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_burger" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/restaurants" />
+                        android:text="@string/restaurants"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_pharmacy" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/pharmacies" />
+                        android:text="@string/medicine"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_milkshake" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="Laiteries" />
+                        android:text="@string/laiteries"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_croissant" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/bakeries" />
+                        android:text="@string/bakeries"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/card_style"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_rowWeight="2"
-                android:layout_columnWeight="1">
-
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="1.5"
                         app:srcCompat="@drawable/ic_shops" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_main_text_style"
+                        style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/boutiques" />
+                        android:text="@string/boutiques"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
-
-        </GridLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            style="@style/card_style"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_rowWeight="2"
-            android:layout_columnWeight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-            app:layout_constraintVertical_bias="0.19999999">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_weight="3"
-                    app:srcCompat="@drawable/ic_question" />
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/intro_main_text_style"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/others" />
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        app:srcCompat="@drawable/ic_question" />
 
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/intro_secondary_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/others"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            </GridLayout>
         </com.google.android.material.card.MaterialCardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
 
 </layout>
