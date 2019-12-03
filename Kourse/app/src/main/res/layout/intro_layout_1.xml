@@ -9,8 +9,8 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="4"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/intro1light" />
+        android:background="@android:color/white"
+        app:srcCompat="@drawable/ic_pic_03" />
 
     <TextView
         style="@style/intro_main_text_style"

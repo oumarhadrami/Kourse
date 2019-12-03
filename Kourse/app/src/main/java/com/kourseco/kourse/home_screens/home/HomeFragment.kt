@@ -27,9 +27,8 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        homeViewModel.text.observe(this, Observer {
-            binding.textHome.text = it
-        })
+
+
 
         //request Location Permission
         //getUserLocation()
