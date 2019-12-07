@@ -20,21 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-           <!-- <LinearLayout
+           <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center"
+
                     android:layout_gravity="bottom"
                     android:textColor="@android:color/black"
                     android:text="HAHAHAA"/>
 
             </LinearLayout>
-            -->
 
         </androidx.appcompat.widget.Toolbar>
 

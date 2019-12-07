@@ -10,36 +10,60 @@
         android:layout_height="match_parent">
 
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="2"
+            app:cardBackgroundColor="#FDF6DC"
+            app:layout_constraintBottom_toTopOf="@+id/hr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/asap"
+                android:text="Invite friends to Kourse to earn upto 500 MRU "
+                android:textColor="@android:color/black" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
 
         <TableRow
             android:id="@+id/hr"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
             android:background="#A7A2A2"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
             app:layout_constraintBottom_toTopOf="@+id/what_would_you_like"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp"
             app:layout_constraintStart_toStartOf="parent" />
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
             android:id="@+id/what_would_you_like"
-            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
-            android:fontFamily="@font/electrolize"
-            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="12dp"
+            android:fontFamily="@font/asap"
+            app:layout_constraintVertical_weight="1"
+            android:gravity="start"
             android:text="@string/what_would_you_like_today"
-            android:layout_margin="12dp" />
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="5"
             android:layout_gravity="bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +76,7 @@
                 android:layout_marginTop="8dp"
                 android:columnCount="3"
                 android:orientation="horizontal"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:useDefaultMargins="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +104,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:textSize="12sp"
                         android:text="@string/supermakets"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
@@ -102,34 +127,13 @@
                         style="@style/intro_secondary_textview_style"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:textSize="12sp"
                         android:layout_weight="1"
                         android:text="@string/restaurants"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.5"
-                        app:srcCompat="@drawable/ic_pharmacy" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/intro_secondary_textview_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:text="@string/pharmacies"
-                        android:textColor="@android:color/black" />
-                </LinearLayout>
 
 
                 <LinearLayout
@@ -152,6 +156,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text="@string/laiteries"
+                        android:textSize="12sp"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
@@ -176,6 +181,32 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text="@string/bakeries"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        app:srcCompat="@drawable/ic_pharmacy" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/intro_secondary_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:text="@string/pharmacies"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
@@ -199,6 +230,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:text="@string/boutiques"
+                        android:textSize="12sp"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
@@ -221,7 +253,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:text="@string/others"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/asap"
+                        android:text="@string/koursili"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
