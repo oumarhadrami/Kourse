@@ -55,7 +55,7 @@ class LogInFragment : Fragment() {
 
         //Navigate to VerifyPhoneNumber fragment with phone number as argument
         binding.login.setOnClickListener {
-            val numberFromEditText = binding.phoneNumberLogin.text.toString().trim()
+            val numberFromEditText = binding.phoneNumberLoginTextfield.text.toString().trim()
             if(numberFromEditText.isEmpty() || numberFromEditText.length < 8){
                 binding.phoneNumberLogin.error = "please enter the 8-digit phone number!"
                 binding.phoneNumberLogin.requestFocus()

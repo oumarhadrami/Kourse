@@ -91,4 +91,10 @@
         <item name="android:layout_margin">16dp</item>
         <item name="android:elevation">4dp</item>
     </style>
+
+
+    <style name="outlineColorTextfield" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/secondaryColor</item>
+
+    </style>
 </resources>
