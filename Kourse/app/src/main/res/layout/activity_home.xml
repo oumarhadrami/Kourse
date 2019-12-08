@@ -8,7 +8,6 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:backgroundTint="@color/primaryTextColor"
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/appbar"
@@ -23,17 +22,22 @@
            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
+               <ImageButton
+                   android:layout_width="0dp"
+                   android:layout_height="24dp"
+                   android:layout_gravity="center"
+                   android:layout_weight="0.1"
+                   android:background="?android:attr/selectableItemBackground"
+                   app:srcCompat="@drawable/ic_location_on_orange_24dp"/>
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-
-                    android:layout_gravity="bottom"
-                    android:textColor="@android:color/black"
-                    android:text="HAHAHAA"/>
-
+                    android:gravity="start|center"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="Rue Oumar, #337, Nouakchott"/>
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
@@ -48,11 +52,11 @@
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar"
         app:navGraph="@navigation/mobile_navigation" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

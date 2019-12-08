@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentHomeBinding
@@ -28,7 +29,33 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
+        binding.supermarketsLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(1))
+        }
 
+        binding.restaurantsLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(2))
+        }
+
+        binding.laitieresLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(3))
+        }
+
+        binding.bakeriesLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(4))
+        }
+
+        binding.pharmaciesLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(5))
+        }
+
+        binding.boutiquesLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(6))
+        }
+
+        binding.koursiliLogo.setOnClickListener {
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToKoursiliFragment())
+        }
 
         //request Location Permission
         //getUserLocation()

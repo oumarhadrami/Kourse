@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/TransparentStatus"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/TransparentStatus">

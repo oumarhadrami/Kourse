@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.kourseco.kourse.home_screens.home.HomeFragment"
         android:label="@string/title_kourse"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_shopFragment"
+            app:destination="@id/shopFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_koursiliFragment"
+            app:destination="@id/koursiliFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
@@ -27,4 +34,18 @@
         android:name="com.kourseco.kourse.home_screens.account.AccountFragment"
         android:label="@string/account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.kourseco.kourse.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" >
+        <argument
+            android:name="shop_type"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/koursiliFragment"
+        android:name="com.kourseco.kourse.KoursiliFragment"
+        android:label="fragment_koursili"
+        tools:layout="@layout/fragment_koursili" />
 </navigation>
