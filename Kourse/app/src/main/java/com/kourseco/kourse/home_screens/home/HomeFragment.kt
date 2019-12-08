@@ -30,27 +30,27 @@ class HomeFragment : Fragment() {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
         binding.supermarketsLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(1))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(1))
         }
 
         binding.restaurantsLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(2))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(2))
         }
 
         binding.laitieresLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(3))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(3))
         }
 
         binding.bakeriesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(4))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(4))
         }
 
         binding.pharmaciesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(5))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(5))
         }
 
         binding.boutiquesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopFragment(6))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(6))
         }
 
         binding.koursiliLogo.setOnClickListener {

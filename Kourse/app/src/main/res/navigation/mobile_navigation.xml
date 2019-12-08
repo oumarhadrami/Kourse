@@ -11,11 +11,11 @@
         android:label="@string/title_kourse"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_shopFragment"
-            app:destination="@id/shopFragment" />
-        <action
             android:id="@+id/action_navigation_home_to_koursiliFragment"
             app:destination="@id/koursiliFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_shopsListFragment"
+            app:destination="@id/shopsListFragment" />
     </fragment>
 
     <fragment
@@ -40,12 +40,24 @@
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop" >
         <argument
-            android:name="shop_type"
-            app:argType="integer" />
+            android:name="shop_name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/koursiliFragment"
         android:name="com.kourseco.kourse.KoursiliFragment"
         android:label="fragment_koursili"
         tools:layout="@layout/fragment_koursili" />
+    <fragment
+        android:id="@+id/shopsListFragment"
+        android:name="com.kourseco.kourse.ShopsListFragment"
+        android:label="fragment_shops_list"
+        tools:layout="@layout/fragment_shops_list" >
+        <action
+            android:id="@+id/action_shopsListFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+        <argument
+            android:name="shop_type"
+            app:argType="integer" />
+    </fragment>
 </navigation>

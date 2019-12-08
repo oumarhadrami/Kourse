@@ -21,15 +21,7 @@ class ShopFragment : Fragment() {
 
         //get shopType from home fragment
         val args = ShopFragmentArgs.fromBundle(arguments!!)
-
-        when(args.shopType){
-            1-> Toast.makeText(activity,"supermarkets", Toast.LENGTH_SHORT).show()
-            2-> Toast.makeText(activity, "restaurants",Toast.LENGTH_SHORT).show()
-            3-> Toast.makeText(activity, "laitieres",Toast.LENGTH_SHORT).show()
-            4-> Toast.makeText(activity, "bakeries",Toast.LENGTH_SHORT).show()
-            5-> Toast.makeText(activity, "pharmacies",Toast.LENGTH_SHORT).show()
-            6-> Toast.makeText(activity, "boutique",Toast.LENGTH_SHORT).show()
-        }
+        val shopName = args.shopName
 
 
         return binding.root
