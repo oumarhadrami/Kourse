@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentHomeBinding
 import com.kourseco.kourse.databinding.FragmentLogInBinding
+import com.kourseco.kourse.util.FirestoreUtil
 
 
 const val MY_PERMISSIONS_REQUEST_LOCATION = 101
@@ -28,6 +29,8 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        //FirestoreUtil.updateCurrentUser(name = "Hadramy")
 
         binding.supermarketsLogo.setOnClickListener {
             it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(1))

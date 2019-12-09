@@ -20,6 +20,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.kourseco.kourse.HomeActivity
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentVerifyNumberBinding
+import com.kourseco.kourse.util.FirestoreUtil
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -168,7 +169,9 @@ class VerifyNumberFragment : Fragment() {
             if (it.isSuccessful) {
                 binding.resend.isEnabled = false
                 binding.progressBar.visibility = View.VISIBLE
+                FirestoreUtil.initCurrentUserIfFirstTime {
                 startActivity(Intent(activity, HomeActivity::class.java))
+                }
             }
             else
                 Toast.makeText(activity, "Phone number not verified!!",Toast.LENGTH_LONG).show()
