@@ -17,7 +17,7 @@ class ShopsListFragment : Fragment() {
 
     private lateinit var binding : FragmentShopsListBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shop,container,false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shops_list,container,false)
 
         //get shopType from home fragment
         val args = ShopsListFragmentArgs.fromBundle(arguments!!)
