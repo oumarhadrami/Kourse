@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name=".home_screens.HomeActivity"
             android:theme="@style/TransparentStatus"></activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".splash_screen.SplashActivity"
             android:theme="@style/TransparentStatus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

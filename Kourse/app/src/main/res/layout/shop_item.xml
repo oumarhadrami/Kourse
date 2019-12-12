@@ -6,7 +6,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         app:cardCornerRadius="7dp"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/shop_container"
         app:cardElevation="5dp"
         android:layout_height="120dp">
 
@@ -24,6 +26,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
+                    android:id="@+id/shop_image"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     tools:src="@drawable/intro1light" />
@@ -39,7 +42,7 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/materialTextView2"
+                    android:id="@+id/shop_name"
                     tools:text="shop name"
                     android:fontFamily="@font/asap"
                     android:textSize="18sp"
@@ -63,7 +66,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/rating_minute_container"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextView2"
+                    app:layout_constraintTop_toBottomOf="@+id/shop_name"
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp" />
 

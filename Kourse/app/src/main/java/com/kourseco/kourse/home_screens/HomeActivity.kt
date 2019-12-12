@@ -1,4 +1,4 @@
-package com.kourseco.kourse
+package com.kourseco.kourse.home_screens
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.kourseco.kourse.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -22,7 +23,10 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_search, R.id.navigation_cart, R.id.navigation_account
+                R.id.navigation_home,
+                R.id.navigation_search,
+                R.id.navigation_cart,
+                R.id.navigation_account
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

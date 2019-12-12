@@ -33,27 +33,27 @@ class HomeFragment : Fragment() {
         //FirestoreUtil.updateCurrentUser(name = "Hadramy")
 
         binding.supermarketsLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(1))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Supermarkets"))
         }
 
         binding.restaurantsLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(2))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Restaurants"))
         }
 
         binding.laitieresLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(3))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Laitieres"))
         }
 
         binding.bakeriesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(4))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Bakeries"))
         }
 
         binding.pharmaciesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(5))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Pharmacies"))
         }
 
         binding.boutiquesLogo.setOnClickListener {
-            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment(6))
+            it.findNavController().navigate(HomeFragmentDirections.actionNavigationHomeToShopsListFragment("Boutiques"))
         }
 
         binding.koursiliLogo.setOnClickListener {

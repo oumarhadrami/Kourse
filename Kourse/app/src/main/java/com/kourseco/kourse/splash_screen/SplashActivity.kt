@@ -1,24 +1,26 @@
-package com.kourseco.kourse
+package com.kourseco.kourse.splash_screen
 
 import android.content.Intent
-import android.media.session.MediaController
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
+import com.kourseco.kourse.R
 import com.kourseco.kourse.introduction_screen.MainActivity
 import com.kourseco.kourse.databinding.ActivitySplashBinding
+import com.kourseco.kourse.home_screens.HomeActivity
 import kotlin.concurrent.thread
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
-    private lateinit var m : MediaController
 
     private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_splash
+        )
 
         val uri = Uri.parse("android.resource://" + this.packageName + "/" + R.raw.splashvideo)
         binding.video.setVideoURI(uri)

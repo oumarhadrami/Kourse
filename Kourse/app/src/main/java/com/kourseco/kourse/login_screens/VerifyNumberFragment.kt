@@ -1,6 +1,7 @@
 package com.kourseco.kourse.login_screens
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -17,7 +18,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.kourseco.kourse.HomeActivity
+import com.kourseco.kourse.home_screens.HomeActivity
 import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.FragmentVerifyNumberBinding
 import com.kourseco.kourse.util.FirestoreUtil
@@ -80,7 +81,7 @@ class VerifyNumberFragment : Fragment() {
     private fun makeResendOrange() {
         val text = "Did not receive the code? Resend OTP"
         val ss = SpannableString(text)
-        val orangeResend = ForegroundColorSpan(resources.getColor(R.color.secondaryColor))
+        val orangeResend = ForegroundColorSpan(Color.parseColor("#f8ab2e"))
         ss.setSpan(orangeResend, 26,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.resend.text = ss
     }
@@ -150,12 +151,10 @@ class VerifyNumberFragment : Fragment() {
 
             override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
                 super.onCodeSent(p0, p1)
-                if (p0 != null){
-                    //binding.otpView.setText(p0)
-                    verificationId = p0
-                    resendToken = p1
-                    binding.resend.isEnabled = true
-                }
+                //binding.otpView.setText(p0)
+                verificationId = p0
+                resendToken = p1
+                binding.resend.isEnabled = true
 
                 binding.progressBar.visibility = View.GONE
                 Toast.makeText(activity, "code sent", Toast.LENGTH_LONG).show()
