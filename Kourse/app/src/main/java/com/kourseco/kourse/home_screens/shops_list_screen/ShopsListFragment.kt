@@ -30,7 +30,7 @@ class ShopsListFragment : Fragment() {
         val args =
             ShopsListFragmentArgs.fromBundle(arguments!!)
 
-        shopsDocRef = FirestoreUtil.firestoreInstance.collection(args.shopType)
+        shopsDocRef = FirestoreUtil.firestoreInstance.collection("Shops/"+ args.shopType + "/" + args.shopType)
         val options = FirestoreRecyclerOptions.Builder<Shop>().setQuery(shopsDocRef, Shop::class.java).build()
         adapter = ShopFirestoreRecyclerAdapter(options)
         binding.shopsList.adapter = adapter

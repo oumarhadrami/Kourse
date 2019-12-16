@@ -16,7 +16,7 @@
             android:layout_height="0dp"
             android:layout_weight="5.5"
             android:scaleType="fitXY"
-            android:src="@drawable/intro1light" />
+            app:srcCompat="@drawable/logo_socite" />
 
 
         <com.google.android.material.card.MaterialCardView

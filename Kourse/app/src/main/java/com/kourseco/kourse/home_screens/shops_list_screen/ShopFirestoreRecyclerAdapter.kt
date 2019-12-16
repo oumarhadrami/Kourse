@@ -1,7 +1,5 @@
 package com.kourseco.kourse.home_screens.shops_list_screen
 
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -41,9 +39,17 @@ class ShopFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Shop>) : Fi
                 .into(binding.shopImage)
 
             binding.shopContainer.setOnClickListener {
-                it.findNavController().navigate(ShopsListFragmentDirections.actionShopsListFragmentToShopFragment(
-                    item.shopId.toString()
-                ))
+                when(item.shopId) {
+                    "Supermarkets" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+                    //it.findNavController().navigate()
+                    "Restaurants" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+                    "Laitieres" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+                    "Bakeries" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+                    "Pharmacies" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+                    "Boutiques" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
+
+
+                }
             }
 
 

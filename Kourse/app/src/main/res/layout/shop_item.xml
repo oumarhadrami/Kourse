@@ -6,8 +6,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         app:cardCornerRadius="7dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/shop_container"
         app:cardElevation="5dp"
         android:layout_height="120dp">
@@ -28,8 +27,7 @@
                     android:layout_width="match_parent"
                     android:id="@+id/shop_image"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    tools:src="@drawable/intro1light" />
+                    android:scaleType="fitXY"/>
 
             </com.google.android.material.card.MaterialCardView>
 
