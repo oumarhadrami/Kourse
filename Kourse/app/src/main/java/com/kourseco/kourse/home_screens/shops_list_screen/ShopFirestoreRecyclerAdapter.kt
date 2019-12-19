@@ -13,8 +13,9 @@ import com.kourseco.kourse.R
 import com.kourseco.kourse.databinding.ShopItemBinding
 
 class ShopFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Shop>) : FirestoreRecyclerAdapter<Shop, ShopFirestoreRecyclerAdapter.ViewHolder>(options) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.from(parent)
+        return from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int, p2: Shop) {
@@ -22,7 +23,7 @@ class ShopFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Shop>) : Fi
         holder.bind(item)
     }
 
-    class ViewHolder private constructor(val binding: ShopItemBinding) :
+    inner class ViewHolder  constructor(val binding: ShopItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Shop) {
@@ -39,30 +40,19 @@ class ShopFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Shop>) : Fi
                 .into(binding.shopImage)
 
             binding.shopContainer.setOnClickListener {
-                when(item.shopId) {
-                    "Supermarkets" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-                    //it.findNavController().navigate()
-                    "Restaurants" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-                    "Laitieres" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-                    "Bakeries" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-                    "Pharmacies" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-                    "Boutiques" -> Toast.makeText(binding.shopContainer.context, item.shopId, Toast.LENGTH_SHORT).show()
-
-
-                }
+                it.findNavController().navigate(ShopsListFragmentDirections.actionShopsListFragmentToShopFragment(""+snapshots.getSnapshot(adapterPosition).reference.path))
             }
 
 
             binding.executePendingBindings()
         }
 
-        companion object {
-            fun from(parent: ViewGroup): ViewHolder {
-                val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ShopItemBinding.inflate(layoutInflater, parent, false)
-                return ViewHolder(binding)
-            }
-        }
+
+    }
+    private fun from(parent: ViewGroup): ViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = ShopItemBinding.inflate(layoutInflater, parent, false)
+        return ViewHolder(binding)
     }
 }
 

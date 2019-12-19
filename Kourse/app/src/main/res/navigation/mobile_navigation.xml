@@ -47,5 +47,17 @@
         <argument
             android:name="shop_type"
             app:argType="string" />
+        <action
+            android:id="@+id/action_shopsListFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        tools:layout="@layout/fragment_shop"
+        android:name="com.kourseco.kourse.home_screens.shops_screens.ShopFragment"
+        android:label="ShopFragment" >
+        <argument
+            android:name="ref"
+            app:argType="string" />
     </fragment>
 </navigation>

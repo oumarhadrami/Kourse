@@ -19,12 +19,15 @@ class ShopsListFragment : Fragment() {
 
     private lateinit var binding : FragmentShopsListBinding
     private lateinit var adapter : ShopFirestoreRecyclerAdapter
-    private lateinit var shopsDocRef : CollectionReference
+    lateinit var shopsDocRef : CollectionReference
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_shops_list,container,false)
+
+        //change toolbar text
+
 
         //get shopType from home fragment
         val args =
