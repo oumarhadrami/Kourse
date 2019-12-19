@@ -41,26 +41,6 @@ class ShopItemsFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<ShopIt
                 .into(binding.shopItemImage)
 
 
-            binding.add.setOnClickListener {
-                item.shopItemCount = item.shopItemCount.plus(1)
-                Log.i("hey", ""+item.shopItemCount)
-                binding.itemCount.text = item.shopItemCount.toString()
-            }
-
-            binding.addMore.setOnClickListener {
-                if (item.shopItemCount > 10)
-                    return@setOnClickListener
-                item.shopItemCount = item.shopItemCount.plus(1)
-                binding.itemCount.text = item.shopItemCount.toString()
-            }
-
-            binding.removeMore.setOnClickListener {
-                if (item.shopItemCount == 0)
-                    return@setOnClickListener
-                item.shopItemCount = item.shopItemCount.plus(1)
-                binding.itemCount.text = item.shopItemCount.toString()
-            }
-
             binding.executePendingBindings()
         }
 
