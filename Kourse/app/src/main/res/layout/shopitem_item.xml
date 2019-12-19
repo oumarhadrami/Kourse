@@ -87,6 +87,8 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:id="@+id/incdec_container"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginBottom="3dp"
                         android:visibility="gone"
                         android:layout_height="match_parent">
 
@@ -109,6 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="@string/_0"
+                            android:textColor="@color/primaryColor"
                             android:gravity="center"
                             android:fontFamily="@font/asap"
                             app:layout_constraintBottom_toBottomOf="parent"
