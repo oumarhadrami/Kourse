@@ -1,6 +1,8 @@
 package com.kourseco.kourse.home_screens.shops_screens
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -25,10 +27,10 @@ class ShopItemsFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<ShopIt
     inner class ViewHolder  constructor(val binding: ShopitemItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+
         fun bind(item: ShopItem) {
             binding.shopItemName.text = item.shopItemName
             binding.shopItemPrice.text = item.shopItemPrice
-            binding.itemCount.text = item.shopItemCount
             Glide.with(binding.shopItemImage.context)
                 .load(item.shopItemImage)
                 .apply(
@@ -39,6 +41,25 @@ class ShopItemsFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<ShopIt
                 .into(binding.shopItemImage)
 
 
+            binding.add.setOnClickListener {
+                item.shopItemCount = item.shopItemCount.plus(1)
+                Log.i("hey", ""+item.shopItemCount)
+                binding.itemCount.text = item.shopItemCount.toString()
+            }
+
+            binding.addMore.setOnClickListener {
+                if (item.shopItemCount > 10)
+                    return@setOnClickListener
+                item.shopItemCount = item.shopItemCount.plus(1)
+                binding.itemCount.text = item.shopItemCount.toString()
+            }
+
+            binding.removeMore.setOnClickListener {
+                if (item.shopItemCount == 0)
+                    return@setOnClickListener
+                item.shopItemCount = item.shopItemCount.plus(1)
+                binding.itemCount.text = item.shopItemCount.toString()
+            }
 
             binding.executePendingBindings()
         }

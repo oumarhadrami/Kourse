@@ -7,11 +7,11 @@
 
     </data>
 
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         app:cardElevation="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_margin="4dp"
         app:cardCornerRadius="5dp"
         android:layout_height="220dp">
         
@@ -25,8 +25,6 @@
                 android:layout_width="match_parent"
                 android:layout_weight="3"
                 android:layout_height="0dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="5dp">
 
                 <ImageView
@@ -46,7 +44,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@android:color/black"
                 android:fontFamily="@font/asap"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="0.5"/>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -57,7 +55,7 @@
                     android:id="@+id/shop_item_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="5dp"
                     android:gravity="start|center"
                     android:text="20 MRU"
                     android:fontFamily="@font/asap"
@@ -70,7 +68,7 @@
                     android:id="@+id/frameLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -81,17 +79,18 @@
                         android:layout_width="match_parent"
                         android:id="@+id/add"
                         android:layout_marginTop="8dp"
+                        android:gravity="center"
                         android:layout_height="match_parent"
                         android:text="add"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:textAllCaps="false" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:visibility="gone"
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/imageButton"
+                            android:id="@+id/add_more"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
                             android:layout_width="wrap_content"
@@ -104,22 +103,21 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_add_black_24dp" />
 
-                        <com.google.android.material.textview.MaterialTextView
+                        <TextView
                             android:id="@+id/item_count"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            tools:text="0"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
+                            android:text="@string/_0"
                             android:gravity="center"
+                            android:fontFamily="@font/asap"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                            app:layout_constraintEnd_toStartOf="@+id/remove_more"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/imageButton"
+                            app:layout_constraintStart_toEndOf="@+id/add_more"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/imageButton2"
+                            android:id="@+id/remove_more"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="?android:attr/selectableItemBackground"
