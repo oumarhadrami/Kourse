@@ -5,7 +5,7 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".home_screens.shops_list_screen.ShopsListFragment">
     <!--<ProgressBar
         android:id="@+id/progressBarShops"
         android:layout_width="wrap_content"
@@ -24,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/shops_list"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:context=".home_screens.shops_list_screen.ShopsListFragment"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </FrameLayout>
 </layout>

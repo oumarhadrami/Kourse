@@ -2,6 +2,7 @@ package com.kourseco.kourse.home_screens.shops_list_screen
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,7 @@ class ShopsListFragment : Fragment() {
 
     private lateinit var binding : FragmentShopsListBinding
     private lateinit var adapter : ShopFirestoreRecyclerAdapter
-    lateinit var shopsDocRef : CollectionReference
+    private lateinit var shopsRef : CollectionReference
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,8 +34,8 @@ class ShopsListFragment : Fragment() {
         val args =
             ShopsListFragmentArgs.fromBundle(arguments!!)
 
-        shopsDocRef = FirestoreUtil.firestoreInstance.collection("Shops/"+ args.shopType + "/" + args.shopType)
-        val options = FirestoreRecyclerOptions.Builder<Shop>().setQuery(shopsDocRef, Shop::class.java).build()
+        shopsRef = FirestoreUtil.firestoreInstance.collection("Shops/"+ args.shopType + "/" + args.shopType)
+        val options = FirestoreRecyclerOptions.Builder<Shop>().setQuery(shopsRef, Shop::class.java).build()
         adapter = ShopFirestoreRecyclerAdapter(options)
         binding.shopsList.adapter = adapter
         binding.lifecycleOwner = this
