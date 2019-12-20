@@ -2,6 +2,7 @@ package com.kourseco.kourse.home_screens.home
 
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
 
         //FirestoreUtil.updateCurrentUser(name = "Hadramy")
 
@@ -65,21 +67,19 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        //add content for toolbar
+        val locationLayout = activity!!.findViewById<View>(R.id.location_layout)
+        locationLayout.visibility = View.VISIBLE
+    }
 
+    override fun onStop() {
+        super.onStop()
+        val locationLayout = activity!!.findViewById<View>(R.id.location_layout)
+        locationLayout.visibility = View.GONE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
     /*private fun getUserLocation() {
         // Here, thisActivity is the current activity
