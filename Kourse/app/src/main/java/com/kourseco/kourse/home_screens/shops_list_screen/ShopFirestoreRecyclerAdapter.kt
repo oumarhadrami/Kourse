@@ -40,7 +40,7 @@ class ShopFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Shop>) : Fi
                 .into(binding.shopImage)
 
             binding.shopContainer.setOnClickListener {
-                it.findNavController().navigate(ShopsListFragmentDirections.actionShopsListFragmentToShopFragment(""+snapshots.getSnapshot(adapterPosition).reference.path))
+                it.findNavController().navigate(ShopsListFragmentDirections.actionShopsListFragmentToShopFragment(""+snapshots.getSnapshot(adapterPosition).reference.path, item.shopName))
             }
 
 
