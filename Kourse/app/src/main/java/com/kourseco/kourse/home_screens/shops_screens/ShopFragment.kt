@@ -29,6 +29,13 @@ class ShopFragment : Fragment() {
         //binding shop details to the views
         args = ShopFragmentArgs.fromBundle(arguments!!)
 
+        //to get fields value from firebase ref
+        //        FirestoreUtil.firestoreInstance
+//            .document(""+args.ref)
+//            .get()
+//            .addOnSuccessListener {
+//                shopsNameText.text = it["shopName"].toString()}
+
         // shop items reference and recyclerview adapter init
         val collectionPath = args.ref + "/Items"
         shopItemsRef = FirestoreUtil.firestoreInstance.collection(collectionPath)
@@ -54,11 +61,8 @@ class ShopFragment : Fragment() {
         //add content for toolbar
         val shopDetailsLayout = activity!!.findViewById<View>(R.id.shop_details_layout)
         val shopsNameText = shopDetailsLayout.findViewById<TextView>(R.id.shop_name_toolbar)
-        FirestoreUtil.firestoreInstance
-            .document(""+args.ref)
-            .get()
-            .addOnSuccessListener {
-                shopsNameText.text = it["shopName"].toString()}
+        shopsNameText.text = args.shopName
+
 
         shopDetailsLayout.visibility = View.VISIBLE
     }
