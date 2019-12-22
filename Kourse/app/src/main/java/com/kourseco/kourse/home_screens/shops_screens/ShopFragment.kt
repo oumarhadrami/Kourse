@@ -41,7 +41,7 @@ class ShopFragment : Fragment() {
         shopItemsRef = FirestoreUtil.firestoreInstance.collection(collectionPath)
         val options = FirestoreRecyclerOptions.Builder<ShopItem>().setQuery(shopItemsRef, ShopItem::class.java).build()
         val manager = GridLayoutManager(activity, 2)
-        adapter = ShopItemsFirestoreRecyclerAdapter(options)
+        adapter = ShopItemsFirestoreRecyclerAdapter(options, activity)
         binding.itemsList.layoutManager = manager
         binding.itemsList.adapter = adapter
         binding.lifecycleOwner = this

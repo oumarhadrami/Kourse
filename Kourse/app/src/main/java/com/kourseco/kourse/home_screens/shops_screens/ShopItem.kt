@@ -2,10 +2,10 @@ package com.kourseco.kourse.home_screens.shops_screens
 
 class ShopItem {
 
-    var shopItemId : String? = null
-    var shopItemImage : String? = null
-    var shopItemName: String? = null
-    var shopItemPrice: String? = null
+    var shopItemId : String = ""
+    var shopItemImage : String = ""
+    var shopItemName: String = ""
+    var shopItemPrice: String = ""
     var shopItemCount : Int = 0
 
 
