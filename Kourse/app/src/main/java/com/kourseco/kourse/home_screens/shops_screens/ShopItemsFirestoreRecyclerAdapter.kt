@@ -41,6 +41,24 @@ class ShopItemsFirestoreRecyclerAdapter(
     inner class ViewHolder  constructor(val binding: ShopitemItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ShopItem) {
+
+            viewModel.viewModelScope.launch {
+                if (viewModel.recordExists(item.shopItemId)) {
+                    val cartItem = viewModel.getRecord(item.shopItemId)
+                    binding.itemCount.text = cartItem.shopItemQuantity.toString()
+                    binding.shopItemName.text = cartItem.shopItemName
+                    binding.shopItemPrice.text = cartItem.shopItemPrice
+                    binding.add.visibility = View.GONE
+                    binding.incdecContainer.visibility = View.VISIBLE
+                    Log.i("fefmoe", "after if ")
+                }
+                else {
+                    binding.itemCount.text = item.shopItemCount.toString()
+                    binding.shopItemName.text = item.shopItemName
+                    binding.shopItemPrice.text = item.shopItemPrice
+                }
+            }
+
             binding.itemCount.text = item.shopItemCount.toString()
             binding.shopItemName.text = item.shopItemName
             binding.shopItemPrice.text = item.shopItemPrice
@@ -56,65 +74,72 @@ class ShopItemsFirestoreRecyclerAdapter(
 
 
 
-                binding.add.setOnClickListener {
-                item.shopItemCount = item.shopItemCount.plus(1)
-                binding.itemCount.text = item.shopItemCount.toString()
-                binding.add.visibility = View.GONE
-                binding.incdecContainer.visibility = View.VISIBLE
+            //on add button click
+            binding.add.setOnClickListener {
+            item.shopItemCount = item.shopItemCount.plus(1)
+            binding.itemCount.text = item.shopItemCount.toString()
+            binding.add.visibility = View.GONE
+            binding.incdecContainer.visibility = View.VISIBLE
 
-                //Insert cart item if its quantity is 0
-                viewModel.viewModelScope.launch {
-                    if (!viewModel.recordExists(item.shopItemId)) {
-                        val cartItem = getCartItem(item)
-                        viewModel.insert(cartItem)
-                    }
-                }
-
-
-            }
-
-            binding.addMore.setOnClickListener {
-                if (item.shopItemCount < 10)
-                item.shopItemCount = item.shopItemCount.plus(1)
-                binding.itemCount.text = item.shopItemCount.toString()
-
-                //update quantity of the cart item ++
-                val cartItem = getCartItem(item)
-                viewModel.update(cartItem)
-            }
-
-            binding.removeMore.setOnClickListener {
-                if (item.shopItemCount >= 1) {
-                    binding.add.visibility = View.GONE
-                    item.shopItemCount = item.shopItemCount.minus(1)
-                    binding.itemCount.text = item.shopItemCount.toString()
-
-                    //update quantity of the cart item --
+            //Insert cart item if its quantity is 0
+            viewModel.viewModelScope.launch {
+                if (!viewModel.recordExists(item.shopItemId)) {
                     val cartItem = getCartItem(item)
+                    viewModel.insert(cartItem)
+                }
+            }
+
+
+            }
+
+            // on + button click
+            binding.addMore.setOnClickListener {
+                viewModel.viewModelScope.launch {
+                    val cartItem = viewModel.getRecord(item.shopItemId)
+                    if (cartItem.shopItemQuantity < 10) {
+                        cartItem.shopItemQuantity = cartItem.shopItemQuantity.plus(1)
+                    }
+                    binding.itemCount.text = cartItem.shopItemQuantity.toString()
+                    //update quantity of the cart item ++
                     viewModel.update(cartItem)
                 }
-                if(item.shopItemCount == 0) {
-                    binding.itemCount.text = item.shopItemCount.toString()
-                    binding.incdecContainer.visibility = View.GONE
-                    binding.add.visibility = View.VISIBLE
+            }
 
-                    //delete cart item when quantity drops to zero
-                    val cartItem = getCartItem(item)
-                    viewModel.deleteCartItem(cartItem)
+
+            // on - button click
+            binding.removeMore.setOnClickListener {
+                viewModel.viewModelScope.launch {
+                    val cartItem = viewModel.getRecord(item.shopItemId)
+                    if (cartItem.shopItemQuantity >= 1) {
+                        binding.add.visibility = View.GONE
+                        cartItem.shopItemQuantity = cartItem.shopItemQuantity.minus(1)
+                        binding.itemCount.text = cartItem.shopItemQuantity.toString()
+
+                        //update quantity of the cart item --
+                        viewModel.update(cartItem)
+                    }
+                    if (cartItem.shopItemQuantity == 0) {
+                        binding.itemCount.text = cartItem.shopItemQuantity.toString()
+                        binding.incdecContainer.visibility = View.GONE
+                        binding.add.visibility = View.VISIBLE
+
+                        //delete cart item when quantity drops to zero
+                        viewModel.deleteCartItem(cartItem)
+                    }
                 }
             }
 
             binding.executePendingBindings()
         }
 
+
         // get the the cart item current values
         private fun getCartItem(item: ShopItem): CartItem {
-            val cartItem = CartItem(shopItemId = item.shopItemId,
+
+            return CartItem(shopItemId = item.shopItemId,
                 shopItemName = item.shopItemName,
                 shopItemPrice = item.shopItemPrice,
                 shopItemQuantity = item.shopItemCount)
-
-            return cartItem
         }
 
 

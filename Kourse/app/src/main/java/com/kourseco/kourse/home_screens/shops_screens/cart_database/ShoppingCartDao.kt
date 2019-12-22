@@ -23,4 +23,7 @@ interface ShoppingCartDao {
     @Query("select * from ShoppingCart where shopItemId = :shopItemId")
     suspend fun recordExists(shopItemId : String) : List<CartItem>
 
+    @Query("select * from ShoppingCart where shopItemId = :shopItemId")
+    suspend fun getRecord(shopItemId: String) : CartItem
+
 }

@@ -30,6 +30,12 @@ class ShoppingCartRepository(private val shoppingCartDao: ShoppingCartDao) {
     suspend fun recordExists(shopItemId : String) : Int{
         val itemsWithThisId : List<CartItem> = shoppingCartDao.recordExists(shopItemId)
         return itemsWithThisId.size
-
     }
+
+    @WorkerThread
+    suspend fun getRecord(shopItemId : String) : CartItem{
+        val cartItemWithThisId : CartItem = shoppingCartDao.getRecord(shopItemId)
+        return cartItemWithThisId
+    }
+
 }

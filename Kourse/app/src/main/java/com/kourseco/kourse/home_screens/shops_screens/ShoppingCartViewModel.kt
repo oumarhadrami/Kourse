@@ -30,7 +30,14 @@ class ShoppingCartViewModel(application: Application): ViewModel()  {
             repo.recordExists(shopItemId)
         }
         Log.i("kotQ",""+itemsWithThisId.await())
-        return itemsWithThisId.await() > 1
+        return itemsWithThisId.await() >= 1
+    }
+
+    suspend fun getRecord(shopItemId: String) : CartItem{
+        val cartItemWithThisId = viewModelScope.async {
+            repo.getRecord(shopItemId)
+        }
+        return cartItemWithThisId.await()
     }
 
     fun emptyCart() = viewModelScope.launch {
