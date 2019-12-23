@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 
 class ShoppingCartRepository(private val shoppingCartDao: ShoppingCartDao) {
 
+    val alltemsCount : LiveData<Int> = shoppingCartDao.getCount()
     val allCartItems : LiveData<List<CartItem>> = shoppingCartDao.getAll()
 
     @WorkerThread
@@ -36,6 +37,11 @@ class ShoppingCartRepository(private val shoppingCartDao: ShoppingCartDao) {
     suspend fun getRecord(shopItemId : String) : CartItem{
         val cartItemWithThisId : CartItem = shoppingCartDao.getRecord(shopItemId)
         return cartItemWithThisId
+    }
+
+    @WorkerThread
+    suspend fun getAllCartItems() : LiveData<List<CartItem>>{
+        return shoppingCartDao.getAll()
     }
 
 }

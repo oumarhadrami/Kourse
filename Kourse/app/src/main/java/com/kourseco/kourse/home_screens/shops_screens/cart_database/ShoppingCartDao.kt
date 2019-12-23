@@ -17,8 +17,11 @@ interface ShoppingCartDao {
     @Delete
     suspend fun delete(cartItem: CartItem)
 
-    @Query("select * from ShoppingCart order by shopItemName desc")
+    @Query("select * from ShoppingCart")
     fun getAll(): LiveData<List<CartItem>>
+
+    @Query("select COUNT(*) from ShoppingCart")
+    fun getCount(): LiveData<Int>
 
     @Query("select * from ShoppingCart where shopItemId = :shopItemId")
     suspend fun recordExists(shopItemId : String) : List<CartItem>

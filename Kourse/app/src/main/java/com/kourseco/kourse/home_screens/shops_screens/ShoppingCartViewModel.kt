@@ -14,14 +14,17 @@ import kotlinx.coroutines.launch
 class ShoppingCartViewModel(application: Application): ViewModel()  {
     private val repo : ShoppingCartRepository
     val allCartItems : LiveData<List<CartItem>>
+    val allItemsCount : LiveData<Int>
 
     init {
         val dao = ShoppingCartDatabase.getDatabase(application).shoppingCartDao
         repo = ShoppingCartRepository(dao)
-        allCartItems = repo.allCartItems
+        allCartItems =repo.allCartItems
+        allItemsCount = repo.alltemsCount
+
     }
 
-    fun insert(cartItem: CartItem) = viewModelScope.launch {
+    suspend fun insert(cartItem: CartItem) = viewModelScope.launch {
         repo.insert(cartItem)
     }
 
@@ -40,15 +43,22 @@ class ShoppingCartViewModel(application: Application): ViewModel()  {
         return cartItemWithThisId.await()
     }
 
-    fun emptyCart() = viewModelScope.launch {
+    suspend fun emptyCart() = viewModelScope.launch {
         repo.emptyCart()
     }
 
-    fun deleteCartItem(cartItem : CartItem) = viewModelScope.launch {
+    suspend fun deleteCartItem(cartItem : CartItem) = viewModelScope.launch {
         repo.deleteCartItem(cartItem)
     }
 
-    fun update(cartItem: CartItem) = viewModelScope.launch {
+    suspend fun update(cartItem: CartItem) = viewModelScope.launch {
         repo.update(cartItem)
     }
+
+//    suspend fun getAllCartItemsSize() : LiveData<List<CartItem>> {
+//        val allCartItems = viewModelScope.async {
+//             repo.getAllCartItems()
+//        }
+//        return allCartItems.await()
+//    }
 }
