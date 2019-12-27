@@ -1,5 +1,6 @@
 package com.kourseco.kourse.home_screens.shops_screens
 
+import android.content.res.Resources
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -49,9 +50,6 @@ class ShopItemsFirestoreRecyclerAdapter(
     inner class ViewHolder  constructor(val binding: ShopitemItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ShopItem) {
-            viewModel.allItemsCount.observe(shopFragmentActivity!!, Observer {
-                shopFragmentBinding.totalItems.text = it.toString()
-            })
             viewModel.viewModelScope.launch {
                 if (viewModel.recordExists(item.shopItemId)) {
                     val cartItem = viewModel.getRecord(item.shopItemId)

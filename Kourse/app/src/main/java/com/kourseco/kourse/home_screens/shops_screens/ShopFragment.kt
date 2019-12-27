@@ -1,6 +1,7 @@
 package com.kourseco.kourse.home_screens.shops_screens
 
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.CollectionReference
@@ -21,10 +23,17 @@ class ShopFragment : Fragment() {
     private lateinit var shopItemsRef : CollectionReference
     private lateinit var adapter : ShopItemsFirestoreRecyclerAdapter
     private lateinit var args: ShopFragmentArgs
+    private lateinit var viewModel: ShoppingCartViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_shop,container,false)
+
+        val application : Application = requireNotNull(this).activity!!.application
+        val viewModelFactory = ShoppingCartViewModelFactory(application)
+        val viewModel = ViewModelProviders.of(this, viewModelFactory).get(ShoppingCartViewModel::class.java)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         //binding shop details to the views
         args = ShopFragmentArgs.fromBundle(arguments!!)
@@ -44,7 +53,7 @@ class ShopFragment : Fragment() {
         adapter = ShopItemsFirestoreRecyclerAdapter(options, activity, binding)
         binding.itemsList.layoutManager = manager
         binding.itemsList.adapter = adapter
-        binding.lifecycleOwner = this
+
 
 
 
